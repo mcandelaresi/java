@@ -13,6 +13,18 @@ public class Transport {
         this.capacitat = capacitat;
         this.motor = motor;
 
+        if (marca == null || marca.isEmpty()) {
+            throw new IllegalArgumentException("La no pot ser nula");
+        }
+
+        if (velocitatMaxima <= 0) {
+            throw new IllegalArgumentException("La velocitat màxima ha de ser positiva");
+        }
+
+        if (capacitat <= 0) {
+            throw new IllegalArgumentException("La capacitat ha de ser positiva");
+        }
+
     }
 
     public String getMarca() {
